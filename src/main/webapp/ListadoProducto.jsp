@@ -24,7 +24,7 @@
 <table border="2" align="center">
 
 <tr>
-<td>ID</td>
+<td>IDproducto</td>
 <td>Nombre</td>
 <td>PrecioVenta</td>
 <td>PrecioComp</td>
