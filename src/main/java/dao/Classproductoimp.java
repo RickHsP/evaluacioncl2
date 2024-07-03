@@ -1,6 +1,6 @@
 package dao;
 
-import java.util.List;
+import java.util.List; 
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -8,12 +8,12 @@ import javax.persistence.Persistence;
 
 import interfaces.Iproducto;
 
-import model.TblProductocl2;
+import model.TblProductocl3;
 
 public class Classproductoimp implements Iproducto {
 
 	@Override
-	public void RegistrarProducto(TblProductocl2 producto) {
+	public void RegistrarProducto(TblProductocl3 producto) {
 		//establecer conexion con la unidad de persistencia...
 				EntityManagerFactory fabr=Persistence.createEntityManagerFactory("evaluacioncl2");
 			    //permite gestionar entidades
@@ -32,7 +32,7 @@ public class Classproductoimp implements Iproducto {
 	}
 
 	@Override
-	public void ActualizarProducto(TblProductocl2 producto) {
+	public void ActualizarProducto(TblProductocl3 producto) {
 		//establecemos conexion con la unidad de persistencia...
 				EntityManagerFactory fabr=Persistence.createEntityManagerFactory("evaluacioncl2");
 				//permite gestionar entidades
@@ -50,7 +50,7 @@ public class Classproductoimp implements Iproducto {
 	}
 
 	@Override
-	public void EliminarProducto(TblProductocl2 producto) {
+	public void EliminarProducto(TblProductocl3 producto) {
 		//establecemos la conexion con unidad de persistencia.
 				EntityManagerFactory fabr=Persistence.createEntityManagerFactory("evaluacioncl2");
 				//gestionar las entidades
@@ -58,7 +58,7 @@ public class Classproductoimp implements Iproducto {
 				//iniciamos la transaccion
 				em.getTransaction().begin();
 				//recuperamos el codigo a eliminar
-				TblProductocl2 elim=em.merge(producto);
+				TblProductocl3 elim=em.merge(producto);
 				//procedemos a eliminar el registro
 				em.remove(elim);
 				//emitimos mensaje por consola
@@ -71,7 +71,7 @@ public class Classproductoimp implements Iproducto {
 	}
 
 	@Override
-	public TblProductocl2 BuscarProducto(TblProductocl2 producto) {
+	public TblProductocl3 BuscarProducto(TblProductocl3 producto) {
 		//establecemos la conexion con la unidad de persistencia..
 				EntityManagerFactory fabr=Persistence.createEntityManagerFactory("evaluacioncl2");
 				//gestionar las entidads
@@ -79,7 +79,7 @@ public class Classproductoimp implements Iproducto {
 				//iniciamos la transaccion
 				em.getTransaction().begin();
 				//recuperamos el codigo a buscar
-				TblProductocl2 buscliente=em.find(TblProductocl2.class,producto.getIdproductocl2());
+				TblProductocl3 buscliente=em.find(TblProductocl3.class,producto.getIdproductocl3());
 				//confirmamos 
 				em.getTransaction().commit();
 				//cerramos
@@ -88,7 +88,7 @@ public class Classproductoimp implements Iproducto {
 	}
 
 	@Override
-	public List<TblProductocl2> ListadoProducto() {
+	public List<TblProductocl3> ListadoProducto() {
 		//establecemos la conexion con la unidad de persistencia..
         EntityManagerFactory fabr=Persistence.createEntityManagerFactory("evaluacioncl2");
         //gestionamos las entidads
@@ -97,7 +97,7 @@ public class Classproductoimp implements Iproducto {
         em.getTransaction().begin();
         //recuperamos los clientes  de la base de datos
         //***********utilizando jpql
-        List<TblProductocl2> listadoproducto=em.createQuery("select c from TblProductocl2 c",TblProductocl2.class).getResultList();
+        List<TblProductocl3> listadoproducto=em.createQuery("select c from TblProductocl2 c",TblProductocl3.class).getResultList();
        // List<TblProductocl2> listadoproducto=em.createQuery("select c from TblProducto c",TblProductocl2.class).getResultList();
         //confirmamos la transaccion
         em.getTransaction().commit();

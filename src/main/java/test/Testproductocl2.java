@@ -1,15 +1,15 @@
 package test;
 
-import java.util.List;
+import java.util.List; 
 
 import dao.Classproductoimp;
 
-import model.TblProductocl2;
+import model.TblProductocl3;
 
 public class Testproductocl2 {
 
 	public static void main(String[] args) {
-		TblProductocl2 prod=new TblProductocl2();
+		TblProductocl3 prod=new TblProductocl3();
 		Classproductoimp crud=new Classproductoimp();
 		
 		/*prod.setNombrecl2("Arroz");
@@ -20,14 +20,14 @@ public class Testproductocl2 {
 		
 		crud.RegistrarProducto(prod);*/
 		
-		List<TblProductocl2> listadoproducto=crud.ListadoProducto();
+		List<TblProductocl3> listadoproducto=crud.ListadoProducto();
 		
-		for(TblProductocl2 lis:listadoproducto){
+		for(TblProductocl3 lis:listadoproducto){
 			
 			//imprimimos por pantalla
-			System.out.println("nombre "+lis.getNombrecl2()+
-					" precio venta "+lis.getPrecioventacl2()+" preciocomp "+lis.getPreciocompcl2()
-					+" estado "+lis.getEstadocl2()+" descripcion "+lis.getDescripcl2());
+			System.out.println("nombre "+lis.getNombrecl3()+
+					" precio venta "+lis.getPrecioventacl3()+" preciocomp "+lis.getPreciocompcl3()
+					+" estado "+lis.getEstadocl3()+" descripcion "+lis.getDescripcl3());
 		}
 
 	}
