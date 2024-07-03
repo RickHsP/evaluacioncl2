@@ -7,7 +7,7 @@
 <title>Registrar Productos</title>
 </head>
 <body bgcolor="#c5dec9">
-<h1 align="center">Registrar Producto</h1>
+<h1 align="center">Registrar Productos Nuevos</h1>
 <form action="Controladorproducto" method="post">
 <table border="2" align="center">
 <tr>
